@@ -55,7 +55,10 @@ resource "azurerm_windows_virtual_machine" "vm" {
   name                = "gateway-vm"
   resource_group_name = azurerm_resource_group.rg.name
   location            = var.location_name
-  size                = "Standard_F2"
+  size                = "Standard_A2m_v2"
+  # Checkout this page for more sizes: https://docs.microsoft.com/en-us/azure/virtual-machines/sizes
+  # Checkout this page for information specific to A-family: https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/av2-series?tabs=sizebasic
+  
   admin_username      = var.administrator
   admin_password      = var.password
   network_interface_ids = [
